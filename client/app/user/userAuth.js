@@ -18,7 +18,7 @@ angular.module('myApp.userAuth', ['ngRoute'])
       console.log($scope.password);
   		$http({
   			method : "POST",
-  			url : '/checklogin',
+  			url : '/users/create',
   			data : {
   				"email" : $scope.email,
   				"password" : $scope.password
