@@ -4,8 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
-  'myApp.userAuth',
-  // 'myApp.version'
+  'myApp.userAuth'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider
@@ -16,5 +15,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   .when('/view1', {
     templateUrl: '/view1/view1.html',
     controller: 'View1Ctrl'
-  });
+  })
+  .when('/', {
+    templateUrl: '/view1/view1.html',
+    controller: 'View1Ctrl'
+  })
 }]);
