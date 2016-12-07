@@ -45,6 +45,7 @@ angular.module('myApp.userAuth', ['ngRoute'])
       console.log($scope.email);
       console.log($scope.password);
       console.log($scope.confirmPassword);
+      console.log($scope.usertype);
 
 		$http({
 			method : "POST",
@@ -54,7 +55,8 @@ angular.module('myApp.userAuth', ['ngRoute'])
 				"email" : $scope.email,
 				"phoneNumber" : $scope.phoneNumber,
 				"password" : $scope.password,
-				"confirmPassword" : $scope.confirmPassword
+				"confirmPassword" : $scope.confirmPassword,
+        "usertype": $scope.usertype
 			}
 		}).success(function(data) {
 			// checking the response data for statusCode
