@@ -7,7 +7,7 @@ angular.module('myApp', [
   'myApp.userAuth',
   'myApp.contactUs',
   'myApp.about',
-  'myApp.checkout'
+  'myApp.shoppingcart'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider
@@ -34,5 +34,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   .when('/checkout', {
     templateUrl: '/checkout/checkout.html',
     controller: 'CheckoutCtrl'
+  })
+  .when('/shoppingcart', {
+    templateUrl: '/shoppingcart/shoppingcart.html',
+    controller: 'ShoppingcartCtrl'
   })
 }]);
