@@ -88,12 +88,10 @@ body {
   }
   .panel-footer .btn:hover {
       border: 1px solid #f4511e;
-      background-color: #fff !important;
-      color: #1abc9c;
   }
   .panel-heading {
       color: #fff !important;
-      background-color: #f4511e !important;
+      /*background-color: #f4511e !important;*/
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -111,11 +109,11 @@ body {
       color: #aaa;
       font-size: 14px;
   }
-  .panel-footer .btn {
+  /*.panel-footer .btn {
       margin: 15px 0;
       background-color: #f4511e;
       color: #fff;
-  }
+  }*/
   .navbar {
       padding-top: 15px;
       padding-bottom: 15px;
@@ -230,4 +228,15 @@ body {
 }
 .footer-text-padding{
   padding: 20px;
+}
+.about-container{
+  margin-top: 125px;
+  padding: 50px;
+}
+
+.shopcart-container{
+  margin: auto;
+  margin-left: 20%;
+  margin-top: 75px;
+  padding: 50px;
 }

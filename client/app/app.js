@@ -5,7 +5,9 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.userAuth',
-  'myApp.contactUs'
+  'myApp.contactUs',
+  'myApp.about',
+  'myApp.checkout'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider
@@ -24,5 +26,13 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   .when('/', {
     templateUrl: '/home/home.html',
     controller: 'HomeCtrl'
+  })
+  .when('/about', {
+    templateUrl: '/about/about.html',
+    controller: 'AboutCtrl'
+  })
+  .when('/checkout', {
+    templateUrl: '/checkout/checkout.html',
+    controller: 'CheckoutCtrl'
   })
 }]);
