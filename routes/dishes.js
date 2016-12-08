@@ -2,23 +2,26 @@
 
 var express = require('express');
 var router = express.Router();
-var printmodule = require('../server/dishes');
+var dishInfo = require('../server/dishes');
 
-// Get all orders
+// Get all dishes
 router.get('/', function(req,res,next){
 
-	// Get all orders
-		printmodule.printing();
+	// Get all dishes
+		var allDishes = dishInfo.getAllDishinfo();
 		console.log("Succesfully Returned");
-		res.json([{id: 123, description: "task1"}, {id: 234, description: "task2"}]);
+    console.log(allDishes);
+		res.json(allDishes);
+
 });
 
-//get order
+//get dish
 router.get('/:id', function(req,res,next){
 
-	//Get order
+	//Get dish
+    var dishInformation = dishInfo.getDishinfo();
 		console.log("Succesfully Fetched");
-		res.json({id: 1, description: "order1"});
+		res.json(dishInformation);
 });
 
 

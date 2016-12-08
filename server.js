@@ -7,6 +7,7 @@ var tasks = require('./routes/tasks');
 var users = require('./routes/users');
 var orders = require('./routes/orders');
 var orderItems = require('./routes/orderItems');
+var dishInfo = require('./routes/dishes');
 
 
 var port = 3007;
@@ -31,7 +32,9 @@ app.use('/', index);
 app.use('/tasks', tasks);
 app.use('/orders', orders);
 app.use('/users', users);
+app.use('/dishes', dishInfo);
 app.use('/order-items', orderItems);
+
 
 
 app.listen(port, function(){
