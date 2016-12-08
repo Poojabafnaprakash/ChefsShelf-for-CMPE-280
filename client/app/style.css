@@ -214,9 +214,9 @@ body {
 }
 
 .contact-color{
-  -webkit-box-shadow: -1px 3px 59px 4px rgba(0,0,0,0.75);
-  -moz-box-shadow: -1px 3px 59px 4px rgba(0,0,0,0.75);
-  box-shadow: -1px 3px 59px 4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -1px 3px 110px 16px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 3px 110px 16px rgba(0,0,0,0.75);
+  box-shadow: -1px 3px 110px 16px rgba(0,0,0,0.75);
   background-color: #b5c6d0;
 }
 
