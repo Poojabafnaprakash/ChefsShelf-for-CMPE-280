@@ -6,14 +6,14 @@ var dishInfo = require('../server/dishes');
 
 // Get all dishes
 router.get('/', function(req,res,next){
-
 	// Get all dishes
-		var allDishes = dishInfo.getAllDishinfo();
+ 	dishInfo.getAllDishinfo(function(data){
 		console.log("Succesfully Returned");
-    console.log(allDishes);
-		res.json(allDishes);
-
+    console.log(data);
+		res.json(data);
+		});
 });
+
 
 //get dish
 router.get('/:id', function(req,res,next){
