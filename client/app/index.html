@@ -20,7 +20,7 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-<body>
+<body id="mytop">
   <div ng-view></div>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="">
@@ -37,9 +37,9 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-                <li class=""><a href="#/view1">Home</a></li>
+                <li class=""><a href="#/home">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#/contactUs">Contact Us</a></li>
                 <li><a href="#/userAuth">Login</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Food Cart</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -59,14 +59,13 @@
 
 
 
-  <footer class="container-fluid text-center">
-    <div class="container-fluid bg-1 text-center">
-      <h3 class="margin margin-font">CMPE 280</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/27/San_Jose_State_Spartans_Logo.svg/996px-San_Jose_State_Spartans_Logo.svg.png" class="img-responsive img-circle margin" style="display:inline" alt="SJSU" width="50" height="50">
-      <a href="#" title="To Top">
+  <footer class="text-center" id="footer">
+      <span><p class="margin-font footer-text-padding">CMPE 280
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/27/San_Jose_State_Spartans_Logo.svg/996px-San_Jose_State_Spartans_Logo.svg.png" class="img-responsive img-circle margin" style="display:inline" alt="SJSU" width="25" height="25">
+      <a href data-target="mytop" title="To Top">
         <span class="glyphicon glyphicon-chevron-up"></span>
-      </a>
-    </div>
+      </a></p>
+    </span>
   </footer>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -74,8 +73,9 @@
   <script src="client/app/bower_components/angular/angular.js"></script>
   <script src="client/app/bower_components/angular-route/angular-route.js"></script>
   <script src="client/app/app.js"></script>
-  <script src="client/app/view1/view1.js"></script>
+  <script src="client/app/home/home.js"></script>
   <script src="client/app/user/userAuth.js"></script>
+  <script src="client/app/contactUs/contactUs.js"></script>
   <!-- <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script> -->

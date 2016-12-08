@@ -3,8 +3,9 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.userAuth'
+  'myApp.home',
+  'myApp.userAuth',
+  'myApp.contactUs'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider
@@ -12,12 +13,16 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     templateUrl: './user/userAuth.html',
     controller: 'UserAuthCtrl'
   })
-  .when('/view1', {
-    templateUrl: '/view1/view1.html',
-    controller: 'View1Ctrl'
+  .when('/home', {
+    templateUrl: '/home/home.html',
+    controller: 'HomeCtrl'
+  })
+  .when('/contactUs', {
+    templateUrl: '/contactUs/contactUs.html',
+    controller: 'ContactUsCtrl'
   })
   .when('/', {
-    templateUrl: '/view1/view1.html',
-    controller: 'View1Ctrl'
+    templateUrl: '/home/home.html',
+    controller: 'HomeCtrl'
   })
 }]);
