@@ -9,6 +9,7 @@ var orders = require('./routes/orders');
 var orderItems = require('./routes/orderItems');
 var getAllDishinfo = require('./routes/dishes');
 var login = require('./routes/login');
+var loginUser = require('./routes/loginUser');
 
 var port = 3007;
 
@@ -31,7 +32,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', index);
 app.use('/tasks', tasks);
 app.use('/orders', orders);
-app.use('/users', users);
+app.use('/users/create', loginUser);
 app.use('/getAllDishinfo', getAllDishinfo);
 app.use('/order-items', orderItems);
 app.use('/register', login);

@@ -13,7 +13,7 @@ module.exports.register = function(callback, user){
 				// return rows;
       }
 			else{
-				callbck({success:false});
+				callback({success:false});
 			}
 
   }, "insert into userinfo(usertype,fullname,password,email,phoneNumber) values('"
@@ -27,41 +27,3 @@ module.exports.register = function(callback, user){
 				+ "','" + user.phoneNumber + "')");
 
 }
-
-
-// module.exports.register = function(req, res) {
-// 	// These two variables come from the form on
-// 	// the views/login.hbs page
-// 	var fullname = req.param("fullname");
-// 	var email = req.param("email");
-// 	var phoneNumber = req.param("phoneNumber");
-//   var password = req.param("password");
-// 	var confirmPassword = req.param("confirmPassword");
-// 	var usertype = req.param("usertype");
-//
-// 	var json_responses;
-// 	var dt = new Date();
-// 	var ciphertext = CryptoJS.AES.encrypt(password, 'cmpe280');
-// 	var insertUser = "insert into userinfo(usertype,fullname,password,email,phoneNumber) values('"
-// 			+ usertype
-// 			+ "','"
-// 			+ fullname
-// 			+ "','"
-// 			+ ciphertext
-// 			+ "','"
-// 			+ email
-// 			+ "','" + phoneNumber + "')";
-// 	console.log(insertUser);
-// 	DBUtil.insertData(function(err, results) {
-// 		console.log("DB Results:" + results);
-// 		if (err) {
-// 			throw err;
-// 		} else {
-// 			json_responses = {
-// 				"statusCode" : 200
-// 			};
-// 			res.send(json_responses);
-// 		}
-// 	}, insertUser);
-
-//};

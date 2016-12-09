@@ -55,7 +55,7 @@ angular.module('myApp.userAuth', ['ngRoute'])
 		}).success(function(data) {
 			// checking the response data for statusCode
 			// Making a get call to the '/redirectToHomepage' API
-			window.location.assign("/home");
+			window.location.assign("/#userAuth");
 		}).error(function(error){
       $scope.registerSuccess = false;
 			$scope.unexpected_error = false;
