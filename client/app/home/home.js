@@ -9,6 +9,13 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('HomeCtrl', [function() {
+.controller('HomeCtrl', function($scope, $http) {
+    $scope.invalid_login = true;
+    	$scope.unexpected_error = true;
+      $scope.allDishes = [];
+      $http.get('/getAllDishinfo').
+        then(function(response) {
+        $scope.allDishes = response.data;
+    });
 
-}]);
+});

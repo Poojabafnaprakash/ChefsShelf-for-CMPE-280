@@ -39,7 +39,8 @@
 </div>
 
 <!-- food category -->
-<div class="container">
+<div class="container" ng-controller="HomeCtrl" ng-model="allDishes">
+  <p>{{allDishes[0]}}<p>
   <div class="jumbotron">
       <ul class="nav nav-tabs">
       <li class=""><a data-toggle="tab" href data-target="#category1">Chinese</a></li>
@@ -53,6 +54,7 @@
             <div class="col-sm-4">
               <div class="thumbnail">
                 <img src="https://c2.staticflickr.com/4/3061/2596329869_ff7d9d4bf2_b.jpg" alt="food1" width="400" height="300">
+                <p> {{allDishes[0].description}} <span> ${{allDishes[0].price}}</span> </p>
                 <button class="btn">Add to cart</button>
               </div>
             </div>

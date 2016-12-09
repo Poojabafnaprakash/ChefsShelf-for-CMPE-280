@@ -10,8 +10,9 @@ angular.module('myApp.userAuth', ['ngRoute'])
 }])
 
 .controller('UserAuthCtrl', function($scope, $http) {
-  $scope.invalid_login = true;
+    $scope.invalid_login = true;
   	$scope.unexpected_error = true;
+    $scope.registerSuccess = true;
 
   	$scope.signIn = function() {
       console.log($scope.email);
@@ -39,13 +40,6 @@ angular.module('myApp.userAuth', ['ngRoute'])
   	};
 
     $scope.register = function() {
-      console.log($scope.fullname);
-      console.log($scope.email);
-      console.log($scope.phoneNumber);
-      console.log($scope.email);
-      console.log($scope.password);
-      console.log($scope.confirmPassword);
-      console.log($scope.usertype);
 
 		$http({
 			method : "POST",
@@ -60,14 +54,13 @@ angular.module('myApp.userAuth', ['ngRoute'])
 			}
 		}).success(function(data) {
 			// checking the response data for statusCode
-
 			// Making a get call to the '/redirectToHomepage' API
-			window.location.assign("/");
-		}).error(function(error) {
+			window.location.assign("/home");
+		}).error(function(error){
+      $scope.registerSuccess = false;
 			$scope.unexpected_error = false;
 		});
 	};
-
 
 
 
