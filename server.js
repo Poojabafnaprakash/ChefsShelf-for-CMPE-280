@@ -10,6 +10,8 @@ var orderItems = require('./routes/orderItems');
 var getAllDishinfo = require('./routes/dishes');
 var login = require('./routes/login');
 var loginUser = require('./routes/loginUser');
+var session = require('client-sessions');
+var logout = require('./routes/logout');
 
 var port = 3007;
 
@@ -19,6 +21,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
+
+app.use(session({
+
+	cookieName: 'session',
+	secret: 'cpme280',
+	duration: 30 * 60 * 1000,    //setting the time for active session
+	activeDuration: 5 * 60 * 1000,  }));
+
 
 // Set Static Folder
 //app.use(express.static(path.join(__dirname, 'client')));
@@ -36,7 +46,8 @@ app.use('/users/create', loginUser);
 app.use('/getAllDishinfo', getAllDishinfo);
 app.use('/order-items', orderItems);
 app.use('/register', login);
-
+app.use('/logout', logout);
+//app.use('/logout', logout);
 
 
 app.listen(port, function(){

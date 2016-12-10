@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.contactUs',
   'myApp.about',
   'myApp.shoppingcart',
-  'myApp.chefProfile'
+  'myApp.chefProfile',
+  'myApp.logout'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider
@@ -32,10 +33,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     templateUrl: '/about/about.html',
     controller: 'AboutCtrl'
   })
-  .when('/checkout', {
-    templateUrl: '/checkout/checkout.html',
-    controller: 'CheckoutCtrl'
-  })
   .when('/shoppingcart', {
     templateUrl: '/shoppingcart/shoppingcart.html',
     controller: 'ShoppingcartCtrl'
@@ -43,5 +40,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   .when('/chefProfile', {
     templateUrl: '/chefProfile/chefProfile.html',
     controller: 'ChefProfileCtrl'
+  })
+  .when('/logout', {
+    //templateUrl: '/logout/logout.html',
+    controller: 'LogoutCtrl'
   })
 }]);

@@ -15,7 +15,12 @@ angular.module('myApp.home', ['ngRoute'])
       $scope.allDishes = [];
       $http.get('/getAllDishinfo').
         then(function(response) {
-        $scope.allDishes = response.data;
+          if((response.data).length>0){
+              $scope.allDishes = response.data;
+          }
+        else{
+          window.location.assign("/#");
+        }
     });
 
 });

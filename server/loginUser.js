@@ -8,7 +8,8 @@ module.exports.login = function(callback, user){
     console.log("db Returned");
     console.log(rows);
     if (rows.length > 0) {
-        callback({success:true});
+			console.log("ROW 0: "+rows[0].email);
+				callback({success:true, email: rows[0].email});
 				// return rows;
       }
 			else{
