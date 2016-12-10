@@ -32,7 +32,7 @@ angular.module('myApp.userAuth', ['ngRoute'])
   			} else
   				// Making a get call to the '/redirectToHomepage' API
 
-  				window.location.assign("/");
+  				window.location.assign("/#home");
   		}).error(function(error) {
   			$scope.unexpected_error = false;
   			$scope.invalid_login = true;
