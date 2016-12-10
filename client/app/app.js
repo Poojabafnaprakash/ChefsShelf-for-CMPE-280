@@ -24,8 +24,8 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     controller: 'ContactUsCtrl'
   })
   .when('/', {
-    templateUrl: '/home/home.html',
-    controller: 'HomeCtrl'
+    templateUrl: '/user/userAuth.html',
+    controller: 'UserAuthCtrl'
   })
   .when('/about', {
     templateUrl: '/about/about.html',
