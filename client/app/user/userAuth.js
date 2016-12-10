@@ -26,7 +26,7 @@ angular.module('myApp.userAuth', ['ngRoute'])
   			}
   		}).success(function(data) {
   			// checking the response data for statusCode
-        
+
   			if (data.statusCode == 401) {
   				$scope.invalid_login = false;
   				$scope.unexpected_error = true;

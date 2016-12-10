@@ -5,7 +5,7 @@ var logout = require('../server/logout');
 router.get('/', function(req,res,next){
     console.log("logging out");
 
-    logout.register(function(data){
+    logout.logout(function(data){
     console.log("Succesfully logged out");
     res.json(data);
     });

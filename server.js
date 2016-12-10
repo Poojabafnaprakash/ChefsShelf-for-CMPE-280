@@ -1,6 +1,10 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var fs = require('fs');
+var profile = require('./routes/profile');
+
+
 
 var index = require('./routes/index');
 var tasks = require('./routes/tasks');
@@ -47,7 +51,8 @@ app.use('/getAllDishinfo', getAllDishinfo);
 app.use('/order-items', orderItems);
 app.use('/register', login);
 app.use('/logout', logout);
-//app.use('/logout', logout);
+app.get('/getProfilePictures',profile.getPhoto);
+
 
 
 app.listen(port, function(){

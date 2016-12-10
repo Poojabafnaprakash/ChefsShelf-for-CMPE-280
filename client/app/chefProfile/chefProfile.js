@@ -9,6 +9,9 @@ angular.module('myApp.chefProfile', ['ngRoute'])
   });
 }])
 
-.controller('ChefProfileCtrl', [function() {
+.controller('ChefProfileCtrl', function($scope, $http) {
+  $http.get('/getProfilePictures').success(function(response){
+           $scope.data = response.message;
+       });
 
-}]);
+});
