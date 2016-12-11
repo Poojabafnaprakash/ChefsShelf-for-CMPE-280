@@ -16,7 +16,13 @@ angular.module('myApp.orders', ['ngRoute'])
           if(response.data != null){
           	console.log("Response");
           	console.log(response.data);
+            for(var i in response.data){
+              for(var j in i){
+                console.log("in j" + response.data.id);
+              }
+            }
             $scope.orders = response.data;
+
           }
         else{
           //window.location.assign("/#");

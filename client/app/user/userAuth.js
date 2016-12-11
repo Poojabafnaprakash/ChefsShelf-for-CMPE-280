@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.userAuth', ['ngRoute'])
+angular.module('myApp.userAuth', ['ngRoute', 'ngStorage'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/userAuth', {
@@ -9,7 +9,7 @@ angular.module('myApp.userAuth', ['ngRoute'])
   });
 }])
 
-.controller('UserAuthCtrl', function($scope, $http) {
+.controller('UserAuthCtrl', function($scope, $http,  $sessionStorage) {
     $scope.invalid_login = true;
   	$scope.unexpected_error = true;
     $scope.registerSuccess = true;
@@ -30,10 +30,11 @@ angular.module('myApp.userAuth', ['ngRoute'])
   			if (data.statusCode == 401) {
   				$scope.invalid_login = false;
   				$scope.unexpected_error = true;
-  			} else
+  			} else{
   				// Making a get call to the '/redirectToHomepage' API
-
+          $sessionStorage.user = data.user;
   				window.location.assign("/#home");
+        }
   		}).error(function(error) {
   			$scope.unexpected_error = false;
   			$scope.invalid_login = true;
@@ -56,7 +57,8 @@ angular.module('myApp.userAuth', ['ngRoute'])
 		}).success(function(data) {
 			// checking the response data for statusCode
 			// Making a get call to the '/redirectToHomepage' API
-			window.location.assign("/#userAuth");
+      $sessionStorage.user = data.user;
+			window.location.assign("/#home");
 		}).error(function(error){
       $scope.registerSuccess = false;
 			$scope.unexpected_error = false;

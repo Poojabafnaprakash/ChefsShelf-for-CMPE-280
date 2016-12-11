@@ -244,3 +244,8 @@ body {
   margin-top: 75px;
   padding: 50px;
 }
+
+img.shoppingcart-img{
+  height: 150px;
+  width: 250px;
+}

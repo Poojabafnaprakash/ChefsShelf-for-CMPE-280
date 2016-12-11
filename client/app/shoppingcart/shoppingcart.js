@@ -20,7 +20,6 @@ angular.module('myApp.shoppingcart', ['ngRoute', 'ngStorage'])
   }
 
   $scope.checkout = function(items) {
-    console.log("in checkout UI" + items);
     $http({
       method : "POST",
       url : '/orders/create',

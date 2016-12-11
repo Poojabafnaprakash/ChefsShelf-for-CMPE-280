@@ -9,7 +9,15 @@ module.exports.login = function(callback, user){
     console.log(rows);
     if (rows.length > 0) {
 			console.log("ROW 0: "+rows[0].email);
-				callback({success:true, email: rows[0].email});
+				callback({success:true, email: rows[0].email, 
+					user: { id: rows[0].useriid, 
+									email: rows[0].email,
+									usertype: rows[0].usertype,
+									fullname: rows[0].fullname,
+									lastname: rows[0].lastname,
+									phoneNumber: rows[0].phoneNumber
+									}
+						});
 				// return rows;
       }
 			else{

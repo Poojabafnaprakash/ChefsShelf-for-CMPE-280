@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.logout', ['ngRoute'])
+angular.module('myApp.logout', ['ngRoute', 'ngStorage'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/logout', {
@@ -9,15 +9,16 @@ angular.module('myApp.logout', ['ngRoute'])
   });
 }])
 
-.controller('LogoutCtrl', function($scope, $http) {
-    $scope.invalid_login = true;
-    	$scope.unexpected_error = true;
+.controller('LogoutCtrl', function($scope, $http, $sessionStorage) {
+
+
+      $scope.logout = function(){
+        console.log("in logout");
       $http.get('/logout').
         then(function(response) {
-          console.log("in angular logout "+response);
-
+          $sessionStorage.user = {};
           window.location.assign("/");
-
     });
+  }
 
 });

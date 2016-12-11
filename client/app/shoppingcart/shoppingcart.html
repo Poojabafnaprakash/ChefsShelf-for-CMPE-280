@@ -1,8 +1,8 @@
 <div class="jumbotron container panel shopcart-container">
 <div class="list-group jumbotron">
-  <a class="list-group-item active">List of dishes in cart</a><br>
-  <a class="list-group-item row" ng-repeat="item in data track by $index">
-		<img class="img-responsive col-xs-4" src="https://static.pexels.com/photos/85973/food-rice-chicken-olives-85973.jpeg">
+  <a class=" row list-group-item active">List of dishes in cart</a><br>
+  <a class="row list-group-item row" ng-repeat="item in data track by $index">
+		<img class="shoppingcart-img img-responsive col-xs-4 " src="https://static.pexels.com/photos/85973/food-rice-chicken-olives-85973.jpeg">
 		<div class="col-xs-4">
 			{{item.description}}
 		</div>
@@ -16,7 +16,7 @@
 		</div>
 
 	</a>
-	<div class="panel-footer" ng-if="data">
+	<div class="row panel-footer" ng-if="data">
 		<div class="row text-center">
 			<div class="col-xs-9">
 				<h4 class="text-right">Total <strong>${{total}}</strong></h4>
