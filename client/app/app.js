@@ -9,7 +9,8 @@ angular.module('myApp', [
   'myApp.about',
   'myApp.shoppingcart',
   'myApp.chefProfile',
-  'myApp.logout'
+  'myApp.logout',
+  'myApp.orders'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider

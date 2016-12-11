@@ -55,6 +55,7 @@ app.get('/getProfilePictures',profile.getPhoto);
 
 
 
+
 app.listen(port, function(){
 	console.log('Server started on port '+port);
 });

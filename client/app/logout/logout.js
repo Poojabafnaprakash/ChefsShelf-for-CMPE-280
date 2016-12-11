@@ -16,7 +16,7 @@ angular.module('myApp.logout', ['ngRoute'])
         then(function(response) {
           console.log("in angular logout "+response);
 
-          window.location.assign("/#");
+          window.location.assign("/");
 
     });
 
