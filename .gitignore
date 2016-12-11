@@ -2,3 +2,4 @@ node_modules
 client/npm-debug.log
 client/bower_components
 client/node_modules
+client/app/uploads/*.*

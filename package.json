@@ -15,9 +15,11 @@
     "crypto-js": "^3.1.8",
     "ejs": "^2.5.3",
     "express": "^4.14.0",
+    "localstorage": "^0.1.0",
     "mongojs": "^2.4.0",
     "mongoose": "^4.7.1",
     "multer": "^1.2.0",
-    "mysql": "^2.12.0"
+    "mysql": "^2.12.0",
+    "ngstorage": "^0.3.11"
   }
 }

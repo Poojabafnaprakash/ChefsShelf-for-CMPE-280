@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.home', ['ngRoute'])
+angular.module('myApp.home', ['ngRoute', 'ngStorage'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
@@ -9,9 +9,16 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('HomeCtrl', function($scope, $http) {
-    $scope.invalid_login = true;
-    	$scope.unexpected_error = true;
+.controller('HomeCtrl', function($scope, $http, $localStorage) {
+
+  $scope.addToCart = function(dish) {
+    if($localStorage.cart == null){
+      $localStorage.cart = [];
+    }
+    $localStorage.cart.push(dish);
+  }
+
+
       $scope.allDishes = [];
       $http.get('/getAllDishinfo').
         then(function(response) {

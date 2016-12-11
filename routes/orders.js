@@ -28,10 +28,15 @@ router.get('/:id', function(req,res,next){
 
 //Create order
 router.post('/create', function(req,res,next){
-	var order = req.body;
+	var orderItems = req.body;
+console.log(orderItems);
 	//Call Create order method
 	console.log("Succesfully Created");
-	res.json({"success": true, id: 1});
+	orders.createOrder(function(data){
+			console.log("Succesfully Returned");
+	    console.log(data);
+			res.json(data);
+		}, orderItems);
 });
 
 
