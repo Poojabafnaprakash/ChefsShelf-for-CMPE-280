@@ -17,7 +17,7 @@ var loginUser = require('./routes/loginUser');
 var session = require('client-sessions');
 var logout = require('./routes/logout');
 
-var port = 8080;
+// var port = 8080;
 
 var app = express();
 
@@ -56,6 +56,6 @@ app.get('/getProfilePictures',profile.getPhoto);
 
 
 
-app.listen(port, function(){
-	console.log('Server started on port '+port);
+app.listen(function(){
+	// console.log('Server started on port '+port);
 });
