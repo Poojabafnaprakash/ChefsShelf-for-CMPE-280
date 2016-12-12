@@ -34,4 +34,6 @@ angular.module('myApp.shoppingcart', ['ngRoute', 'ngStorage'])
     })
   };
 
+  
+
 });

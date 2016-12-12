@@ -44,7 +44,7 @@
     <div class="row text-center">
       <div class="col-sm-4" ng-repeat="dish in allDishes">
         <div class="thumbnail">
-          <img src="https://c2.staticflickr.com/4/3061/2596329869_ff7d9d4bf2_b.jpg" alt="food1" width="450" height="300">
+          <img src="uploads/{{dish.image_name}}" alt="foods" width="450" height="300">
           <p> {{dish.description}} <span> ${{dish.price}}</span> </p>
           <button class="btn" id="{{dish.dishid}}" ng-click="addToCart(dish)">Add to cart</button>
         </div>

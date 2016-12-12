@@ -1,13 +1,13 @@
 <div class="jumbotron container panel shopcart-container">
 <div class="list-group jumbotron">
   <a class="row list-group-item active">Your orders</a><br>
-  <a class="list-group-item row" ng-repeat="item in data ">
-		<img class="shoppingcart-img img-responsive col-xs-4" src="https://static.pexels.com/photos/85973/food-rice-chicken-olives-85973.jpeg">
-		<div class="col-xs-4">
+  <a class="list-group-item row" ng-repeat="item in orders">
+		<img class="order-img img-responsive  col-xs-4" src="uploads/{{item.image_name}}">
+		<div class="col-xs-push-1 col-xs-4">
 			{{item.description}}
 		</div>
-		<div class="col-xs-3">
-			${{item.price}}
+		<div class="col-xs-push-5 col-xs-2">
+			Price: ${{item.price}}
 		</div>
 	</a>
 </div>

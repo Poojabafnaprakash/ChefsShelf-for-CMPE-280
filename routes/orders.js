@@ -11,7 +11,6 @@ router.get('/', function(req,res,next){
 		console.log("Get all orders ");
 		orders.getMyOrders(function(data){
 			console.log("Succesfully Returned");
-	    console.log(data);
 			res.json(data);
 		});
 		//res.json([{id: 123, description: "task1"}, {id: 234, description: "task2"}]);
@@ -34,7 +33,6 @@ console.log(orderItems);
 	console.log("Succesfully Created");
 	orders.createOrder(function(data){
 			console.log("Succesfully Returned");
-	    console.log(data);
 			res.json(data);
 		}, orderItems);
 });

@@ -249,3 +249,8 @@ img.shoppingcart-img{
   height: 150px;
   width: 250px;
 }
+
+img.order-img{
+  height: 50px;
+  width: 100px;
+}

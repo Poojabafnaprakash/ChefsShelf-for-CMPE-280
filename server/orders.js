@@ -4,7 +4,7 @@ var DBUtil = require('./DBconnection');
 module.exports.getMyOrders = function(callback){
   DBUtil.fetchData(function(err, rows){
     console.log("db Returned");
-    console.log(rows);
+
     if (rows.length > 0) {
     	orders_map = {}
 			for ( var i = 0; i<rows.length; i++){
@@ -14,7 +14,6 @@ module.exports.getMyOrders = function(callback){
 				orders_map[rows[i].orderid].push( rows[i]);
 			}
 
-			console.log(orders_map);
       callback(orders_map);
     }
 
@@ -66,7 +65,6 @@ module.exports.getDishinfo = function(id){
   console.log("print from function");
   DBUtil.fetchData(function(err, rows){
     console.log(err);
-    console.log(rows);
     if (rows.length > 0) {
 				return rows[0];
       }
