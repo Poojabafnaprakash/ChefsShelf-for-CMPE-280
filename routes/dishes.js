@@ -10,7 +10,6 @@ router.get('/', function(req,res,next){
 
     dishInfo.getAllDishinfo(function(data){
 		console.log("Succesfully Returned");
-    console.log(data);
 		res.json(data);
 		});
   

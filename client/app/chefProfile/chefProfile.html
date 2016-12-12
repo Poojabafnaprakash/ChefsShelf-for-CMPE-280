@@ -1,6 +1,6 @@
 
 <div class="container">
-    <div class="chef-profile">
+    <div class="fb-profile">
         <img align="left" class="cook-cover-pic" src="http://weneedfun.com/wp-content/uploads/2015/10/Beautiful-Food-Photos-11.jpg" alt="Cover photo" />
         <img align="left" class="cook-profile-pic thumbnail" src="http://www.allianceabroad.com/wp-content/uploads/chef1.jpg" alt="profile" />
 
@@ -30,7 +30,7 @@
                                             <div class="row" ng-repeat="x in data">
                                               <div class="col-lg-push-1 col-lg-9 col-md-9 col-sm-6 col-xs-push-2 col-xs-9 col-xs-pull-1">
                                                 <div class="hovereffect thumbnail">
-                                                  <img class="img-responsive" src="uploads/{{x.details.filename}}" alt=""  width="1100" height="700">
+                                                  <img class="img-responsive" src="uploads/{{x.image_name}}" alt=""  width="1100" height="700">
                                                   <div class="overlay">
                                                     <h2>{{x.description}}</h2>
                                                     <h2>${{x.price}}</h2>
@@ -93,6 +93,7 @@
                                                     <label for="price">Price:</label>
                                                     <input type="number" class="form-control" id="price" name="price" >
                                                 </div>
+                                                <input ng-controller="HomeCtrl" type="hidden" name="userid" value="{{userid}}">
                                                 <div>
                                                 <input type ="submit" name="submit" value="submit" />
                                              </div>
@@ -127,7 +128,7 @@ body
 font-family: 'Open Sans', sans-serif;
 }
 
-.chef-profile.cook-cover-pic{
+.fb-profile.cook-cover-pic{
 z-index: 0;
 margin-bottom: 10px;
 }
