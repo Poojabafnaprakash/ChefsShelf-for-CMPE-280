@@ -9,7 +9,7 @@ angular.module('myApp.shoppingcart', ['ngRoute', 'ngStorage'])
   });
 }])
 
-.controller('ShoppingcartCtrl', function($http, $scope, $localStorage) {
+.controller('ShoppingcartCtrl', function($http, $scope, $localStorage, $sessionStorage) {
 
   console.log($localStorage.cart);
     $scope.data = $localStorage.cart;
@@ -23,7 +23,7 @@ angular.module('myApp.shoppingcart', ['ngRoute', 'ngStorage'])
     $http({
       method : "POST",
       url : '/orders/create',
-      data : items
+      data : {items: items, userid: $sessionStorage.user.userid}
 
     }).success(function(data) {
 
@@ -33,7 +33,5 @@ angular.module('myApp.shoppingcart', ['ngRoute', 'ngStorage'])
         window.location.assign("/#orders");
     })
   };
-
-  
 
 });

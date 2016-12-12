@@ -40,15 +40,16 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <!-- ng-click="getAccess()" -->s
+
                 <li class=""><a href="#/chefProfile"><span class="glyphicon glyphicon-user"></span></a></li>
                 <li class=""><a href="#/home">Home</a></li>
                 <li><a href="#/about">About</a></li>
                 <li><a href="#/contactUs">Contact Us</a></li>
-                <li><a href="#/userAuth">Login</a></li>
+
                 <li><a href="#/orders">Orders</a></li>
                 <li><a href="#/shoppingcart"><span class="glyphicon glyphicon-shopping-cart"></span> Food Cart</a></li>
-                <li><a href="#/logout" ng-controller="LogoutCtrl" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="#/userAuth" ng-controller="HomeCtrl" ng-hide="userLoggedIn()">Login</a></li>
+                <li><a href="#/logout" ng-controller="HomeCtrl" ng-show="userLoggedIn()" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             </ul>
         </div>
     </div>

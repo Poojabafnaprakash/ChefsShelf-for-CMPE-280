@@ -7,17 +7,14 @@ var dishInfo = require('../server/dishes');
 // Get all dishes
 router.get('/', function(req,res,next){
 	// Get all dishes
- 	if(req.session.email){
+
     dishInfo.getAllDishinfo(function(data){
 		console.log("Succesfully Returned");
     console.log(data);
 		res.json(data);
 		});
-  }
-  else{
-    
-    res.json(data);
-  }
+  
+
 });
 
 

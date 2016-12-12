@@ -12,7 +12,7 @@ router.get('/', function(req,res,next){
 		orders.getMyOrders(function(data){
 			console.log("Succesfully Returned");
 			res.json(data);
-		});
+		}, req.query);
 		//res.json([{id: 123, description: "task1"}, {id: 234, description: "task2"}]);
 });
 
@@ -28,11 +28,12 @@ router.get('/:id', function(req,res,next){
 //Create order
 router.post('/create', function(req,res,next){
 	var orderItems = req.body;
-console.log(orderItems);
+	console.log(orderItems);
 	//Call Create order method
 	console.log("Succesfully Created");
 	orders.createOrder(function(data){
 			console.log("Succesfully Returned");
+	    console.log(data);
 			res.json(data);
 		}, orderItems);
 });

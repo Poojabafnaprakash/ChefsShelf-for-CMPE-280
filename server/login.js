@@ -15,8 +15,8 @@ module.exports.register = function(callback, user){
 			    console.log(rows);
 			    if (rows.length > 0) {
 						console.log("ROW 0: "+rows.insertId);
-							callback({success:true, email: rows[0].email, 
-												user: { id: rows[0].useriid, 
+							callback({success:true, email: rows[0].email,
+												user: { id: rows[0].userid, 
 																email: rows[0].email,
 																usertype: rows[0].usertype,
 																fullname: rows[0].fullname,

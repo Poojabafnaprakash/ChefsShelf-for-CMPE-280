@@ -12,13 +12,6 @@ angular.module('myApp.logout', ['ngRoute', 'ngStorage'])
 .controller('LogoutCtrl', function($scope, $http, $sessionStorage) {
 
 
-      $scope.logout = function(){
-        console.log("in logout");
-      $http.get('/logout').
-        then(function(response) {
-          $sessionStorage.user = {};
-          window.location.assign("/");
-    });
-  }
+    
 
 });

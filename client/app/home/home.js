@@ -9,7 +9,10 @@ angular.module('myApp.home', ['ngRoute', 'ngStorage'])
   });
 }])
 
-.controller('HomeCtrl', function($scope, $http, $localStorage) {
+.controller('HomeCtrl', function($scope, $http, $localStorage, $sessionStorage) {
+
+
+
 
   $scope.addToCart = function(dish) {
     if($localStorage.cart == null){
@@ -18,7 +21,20 @@ angular.module('myApp.home', ['ngRoute', 'ngStorage'])
     $localStorage.cart.push(dish);
   }
 
+  $scope.userLoggedIn = function() {
+    $scope.LoggedIn = $sessionStorage.user.userid != null;
+    console.log($scope.userLoggedIn);
+    return $scope.LoggedIn;
+  }
 
+  $scope.logout = function(){
+    console.log("in logout");
+  $http.get('/logout').
+    then(function(response) {
+      $sessionStorage.user = {};
+      window.location.assign("/");
+});
+}
       $scope.allDishes = [];
       $http.get('/getAllDishinfo').
         then(function(response) {
