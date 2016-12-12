@@ -17,7 +17,7 @@ var loginUser = require('./routes/loginUser');
 var session = require('client-sessions');
 var logout = require('./routes/logout');
 
-var port = 3007;
+var port = 8080;
 
 var app = express();
 
